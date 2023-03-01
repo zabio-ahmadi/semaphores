@@ -1,17 +1,14 @@
 CC=gcc
 CFLAGS= -Wall -Wextra -std=c11 -g -O3 -fsanitize=leak -fsanitize=address  -fsanitize=address
 LDFLAGS= -lm -lpthread
-VPATH=semaphore/
 all: executable 
 
-executable: semaphore.o main.o 
+executable:arcade.o 
 	$(CC) $(CFLAGS) $^ -o $@ $(LDFLAGS) 
 
 
-semaphore: semaphore.c semaphore.h 
-	$(CC) $(CFLAGS) -c $^ -o $@
-main.o: main.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+arcade.o: arcade.c
+	$(CC) $(CFLAGS) -c $^ -o $@ $(LDFLAGS)
 
 run:
 	./executable
