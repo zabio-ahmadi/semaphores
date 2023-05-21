@@ -1,3 +1,4 @@
+#updated
 CC=gcc
 CFLAGS= -Wall -Wextra -std=c11 -g -O3 -fsanitize=leak -fsanitize=address  -fsanitize=address
 LDFLAGS= -lm -lpthread
